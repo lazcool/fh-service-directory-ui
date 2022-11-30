@@ -189,7 +189,7 @@ public class ServiceFilterModel : PageModel
     }
 
     private void CreateServiceDeliveryDictionary()
-    {
+{
         var myEnumDescriptions = from ServiceDelivery n in Enum.GetValues(typeof(ServiceDelivery))
                                  select new { Id = (int)n, Name = Utility.GetEnumDescription(n) };
 
