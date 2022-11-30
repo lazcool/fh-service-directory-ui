@@ -1,3 +1,4 @@
+using FamilyHubs.ServiceDirectory.Infrastructure.Services;
 using FamilyHubs.ServiceDirectory.Infrastructure.Services.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddPostcodesIoClient(builder.Configuration);
+
+builder.Services.AddTransient<ILocalOfferClientService, LocalOfferClientService>();
 
 var app = builder.Build();
 

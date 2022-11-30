@@ -1,6 +1,1911 @@
-﻿@page
+﻿@page "{postCode}"
 @model FamilyHubs.ServiceDirectory.Web.Pages.ServiceFilterModel
 @{
 }
 
-<h1 class="govuk-heading-l govuk-!-margin-bottom-4">Your local family hubs, services and activities </h1>
+<a asp-page="/PostcodeSearch" class="govuk-back-link" data-testid="back-button">Back</a>
+
+
+<main class="govuk-main-wrapper custom-main" id="main-content" role="main">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <!-- <span class="govuk-caption-m govuk-!-margin-bottom-2">Page 2 of 3</span> -->
+
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+                Your local family hubs, services and activities
+            </h1>
+
+            <span class="govuk-caption-m govuk-!-margin-bottom-2 govuk-!-margin-top-4">Showing results for: <a href="enter-postcode.html" class="govuk-link">BS0 0SP</a>
+
+        </div>
+    </div>
+
+    <button class="govuk-button govuk-button--secondary close-filters-btn" data-module="govuk-button" onclick="myOpenClose()">
+        Open / close filters
+    </button>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+
+            <div class="moj-filter">
+
+                <div class="moj-filter__header" style="padding: 0;">
+                    <!-- <div class="moj-filter__header-title">
+                      <h2 class="govuk-heading-m">Filter</h2>
+                    </div> -->
+                    <div class="moj-filter__header-action">
+                    </div>
+
+                </div>
+
+                <div class="moj-filter__content">
+
+                    <div class="moj-filter__selected">
+
+                        <div class="moj-filter__selected-heading">
+
+                            <div class="moj-filter__heading-title">
+                                <h2 class="govuk-heading-m">Filter results</h2>
+                            </div>
+
+                            <div class="moj-filter__heading-action">
+                                <p style="font-size: 16px"><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+                            </div>
+
+                        </div>
+
+
+                        <h3 class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">Search within</h3>
+
+                        <ul class="moj-filter-tags filters-component__remove-tags">
+                            <li><a class="moj-filter__tag icon--cross filters-component__remove-tags__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>20 miles</a></li>
+                        </ul>
+
+                        <h3 class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">Age range</h3>
+
+                        <ul class="moj-filter-tags filters-component__remove-tags">
+                            <li><a class="moj-filter__tag icon--cross filters-component__remove-tags__tag" href="#"><span class="govuk-visually-hidden">Remove this filter</span>All age groups</a></li>
+                        </ul>
+
+                    </div>
+
+                    <form action="/results" method="post">
+                        <div class="moj-filter__options" id="myFilter">
+
+                            <button class="govuk-button" data-module="govuk-button">
+                                Apply filters
+                            </button>
+
+                            <div class="govuk-form-group">
+
+                                <fieldset class="govuk-fieldset resul-filters">
+
+                                    <div class="filters-component__groups">
+                                        <div class="filters-component__groups__group" data-filters-target="group" data-group="subjects">
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s"><h3 class="govuk-fieldset__heading">Category</h3></legend>
+                                            <div>
+                                                <div class="searchable-collection-component" style="margin-bottom: 20px;">
+                                                    <div class="searchable-collection-component--only-scrollable">
+
+
+
+
+
+                                                        <div class="govuk-form-group">
+
+                                                            <fieldset class="govuk-fieldset">
+
+                                                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+                                                                    Activities, clubs and groups
+
+                                                                </legend>
+
+
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small"
+                                                                     data-module="govuk-checkboxes">
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2">
+                                                                            Activities
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-2" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-2">
+                                                                            Before and after school clubs
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-3" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-3">
+                                                                            Holiday clubs and schemes
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-4" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-4">
+                                                                            Music, arts and dance
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-5" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-5">
+                                                                            Parent, baby and toddler groups
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-6" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-6">
+                                                                            Pre-school playgroup
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-7" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-7">
+                                                                            Sports and recreation
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+                                                                </div>
+
+
+                                                            </fieldset>
+
+
+                                                        </div>
+
+
+
+
+
+                                                        <div class="govuk-form-group">
+
+                                                            <fieldset class="govuk-fieldset">
+
+                                                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+                                                                    Family support
+
+                                                                </legend>
+
+
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small"
+                                                                     data-module="govuk-checkboxes">
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2">
+                                                                            Bullying and cyber bullying
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-2" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-2">
+                                                                            Debt and welfare advice
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-3" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-3">
+                                                                            Domestic abuse
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-4" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-4">
+                                                                            Intensive targeted family support
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-5" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-5">
+                                                                            Money, benefits and housing
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-6" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-6">
+                                                                            Parenting support
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-7" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-7">
+                                                                            Reducing parental conflict
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-8" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-8">
+                                                                            Separating and separated parent support
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-9" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-9">
+                                                                            Stopping smoking
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-10" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-10">
+                                                                            Substance misuse (including alcohol and drug)
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-11" name="category-2" type="checkbox" value="targeted-support">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-11">
+                                                                            Targeted youth support
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-12" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-12">
+                                                                            Youth justice services
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+                                                                </div>
+
+
+                                                            </fieldset>
+
+
+                                                        </div>
+
+
+
+
+
+                                                        <div class="govuk-form-group">
+
+                                                            <fieldset class="govuk-fieldset">
+
+                                                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+                                                                    Health
+
+                                                                </legend>
+
+
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small"
+                                                                     data-module="govuk-checkboxes">
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2">
+                                                                            Hearing and sight
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-2" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-2">
+                                                                            Nutrition and weight management
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-3" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-3">
+                                                                            Oral health
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-4" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-4">
+                                                                            Public health services
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-5" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-5">
+                                                                            Mental health, social and emotional support
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+                                                                </div>
+
+
+                                                            </fieldset>
+
+
+                                                        </div>
+
+
+
+
+
+
+
+                                                        <div class="govuk-form-group">
+
+                                                            <fieldset class="govuk-fieldset">
+
+                                                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+                                                                    Pregnancy, birth and early years
+
+                                                                </legend>
+
+
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small"
+                                                                     data-module="govuk-checkboxes">
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2">
+                                                                            Early years language and learning
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-2" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-2">
+                                                                            Birth registration
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-3" name="category-2" type="checkbox" value="infant-feeding">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-3">
+                                                                            Infant feeding support (including breastfeeding)
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-4" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-4">
+                                                                            Midwife and maternity
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-5" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-5">
+                                                                            Perinatal mental health support (pregnancy to one year post birth)
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-6" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-6">
+                                                                            Health visiting
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+                                                                </div>
+
+
+                                                            </fieldset>
+
+
+                                                        </div>
+
+
+
+
+
+                                                        <div class="govuk-form-group">
+
+                                                            <fieldset class="govuk-fieldset">
+
+                                                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+                                                                    Special educational needs and disabilities (SEND) support
+
+                                                                </legend>
+
+
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small"
+                                                                     data-module="govuk-checkboxes">
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2">
+                                                                            Early years support
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-2" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-2">
+                                                                            Autistic Spectrum Disorder (ASD)
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-3" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-3">
+                                                                            Breaks and respite
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-4" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-4">
+                                                                            Groups for parents and carers of children with SEND
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-5" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-5">
+                                                                            Hearing impairment
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-6" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-6">
+                                                                            Multi-sensory impairment
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-7" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-7">
+                                                                            Physical disabilities
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-8" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-8">
+                                                                            Learning difficulties and disabilities
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-9" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-9">
+                                                                            Social, emotional and mental health support
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-10" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-10">
+                                                                            Speech, language and communication needs
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-11" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-11">
+                                                                            Visual impairment
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2-12" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2-12">
+                                                                            Other difficulties or disabilities
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+                                                                </div>
+
+
+                                                            </fieldset>
+
+
+                                                        </div>
+
+
+
+
+
+                                                        <div class="govuk-form-group">
+
+                                                            <fieldset class="govuk-fieldset">
+
+                                                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+                                                                    Transport
+
+                                                                </legend>
+
+
+                                                                <div class="govuk-checkboxes govuk-checkboxes--small"
+                                                                     data-module="govuk-checkboxes">
+
+
+
+
+
+
+
+
+
+                                                                    <div class="govuk-checkboxes__item">
+                                                                        <input class="govuk-checkboxes__input" id="category-2" name="category-2" type="checkbox" value="">
+                                                                        <label class="govuk-label govuk-checkboxes__label" for="category-2">
+                                                                            Community transport
+                                                                        </label>
+
+                                                                    </div>
+
+
+
+
+                                                                </div>
+
+
+                                                            </fieldset>
+
+
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </fieldset>
+
+                                <div class="border-bottom" style="padding: 20px 0 10px 0;">
+
+
+
+
+                                    <div class="govuk-form-group">
+
+                                        <fieldset class="govuk-fieldset">
+
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+                                                Cost
+
+                                            </legend>
+
+
+                                            <div class="govuk-checkboxes govuk-checkboxes--small"
+                                                 data-module="govuk-checkboxes">
+
+
+
+
+
+
+
+
+
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="category-2" name="category-2" type="checkbox" value="">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="category-2">
+                                                        Free
+                                                    </label>
+
+                                                </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="category-2-2" name="category-2" type="checkbox" value="">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="category-2-2">
+                                                        Pay to use
+                                                    </label>
+
+                                                </div>
+
+
+
+
+                                            </div>
+
+
+                                        </fieldset>
+
+
+                                    </div>
+
+                                </div>
+
+                                <div class="border-bottom" style="padding: 20px 0 10px 0;">
+
+
+
+
+
+                                    <div class="govuk-form-group">
+
+                                        <fieldset class="govuk-fieldset">
+
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+                                                Show
+
+                                            </legend>
+
+
+                                            <div class="govuk-checkboxes govuk-checkboxes--small"
+                                                 data-module="govuk-checkboxes">
+
+
+
+
+
+
+
+
+
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="category-2" name="category-2" type="checkbox" value="all-hubs">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="category-2">
+                                                        Family hubs
+                                                    </label>
+
+                                                </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="category-2-2" name="category-2" type="checkbox" value="">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="category-2-2">
+                                                        Services and groups
+                                                    </label>
+
+                                                </div>
+
+
+
+
+                                            </div>
+
+
+                                        </fieldset>
+
+
+                                    </div>
+
+                                </div>
+
+                                <fieldset class="govuk-fieldset border-bottom" style="padding-bottom: 10px;">
+
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s" style="padding-top: 20px;">
+                                        Search within
+                                    </legend>
+
+
+
+
+                                    <div class="govuk-form-group">
+
+                                        <fieldset class="govuk-fieldset">
+
+
+                                            <div class="govuk-radios govuk-radios--small"
+                                                 data-module="govuk-radios">
+
+
+
+
+
+
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="search-within" name="category-2" type="radio" value="one-miles">
+                                                    <label class="govuk-label govuk-radios__label" for="search-within">
+                                                        1 mile
+                                                    </label>
+
+                                                </div>
+
+
+
+
+
+
+
+
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="search-within-2" name="category-2" type="radio" value="two-miles">
+                                                    <label class="govuk-label govuk-radios__label" for="search-within-2">
+                                                        2 miles
+                                                    </label>
+
+                                                </div>
+
+
+
+
+
+
+
+
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="search-within-3" name="category-2" type="radio" value="five-miles">
+                                                    <label class="govuk-label govuk-radios__label" for="search-within-3">
+                                                        5 miles
+                                                    </label>
+
+                                                </div>
+
+
+
+
+
+
+
+
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="search-within-4" name="category-2" type="radio" value="ten-miles">
+                                                    <label class="govuk-label govuk-radios__label" for="search-within-4">
+                                                        10 miles
+                                                    </label>
+
+                                                </div>
+
+
+
+
+
+
+
+
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="search-within-5" name="category-2" type="radio" value="twenty-miles" checked>
+                                                    <label class="govuk-label govuk-radios__label" for="search-within-5">
+                                                        20 miles
+                                                    </label>
+
+                                                </div>
+
+
+
+
+                                            </div>
+
+
+                                        </fieldset>
+
+
+                                    </div>
+
+
+                                </fieldset>
+
+                            </div>
+
+
+                            <div class="govuk-form-group">
+                                <div class="govuk-fieldset">
+
+
+
+
+
+                                    <div class="govuk-form-group">
+
+                                        <fieldset class="govuk-fieldset">
+
+                                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+
+                                                Age range
+
+                                            </legend>
+
+
+                                            <div class="govuk-checkboxes govuk-checkboxes--small"
+                                                 data-module="govuk-checkboxes">
+
+
+
+
+
+
+
+
+
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="category-2" name="category-2" type="checkbox" value="all-age-groups" checked>
+                                                    <label class="govuk-label govuk-checkboxes__label" for="category-2">
+                                                        All age groups
+                                                    </label>
+
+                                                </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="category-2-2" name="category-2" type="checkbox" value="">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="category-2-2">
+                                                        0 to 5
+                                                    </label>
+
+                                                </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="category-2-3" name="category-2" type="checkbox" value="">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="category-2-3">
+                                                        6 to 11
+                                                    </label>
+
+                                                </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="category-2-4" name="category-2" type="checkbox" value="">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="category-2-4">
+                                                        12 to 15
+                                                    </label>
+
+                                                </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="category-2-5" name="category-2" type="checkbox" value="">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="category-2-5">
+                                                        16 to 18
+                                                    </label>
+
+                                                </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="category-2-6" name="category-2" type="checkbox" value="">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="category-2-6">
+                                                        19 to 25 with SEND
+                                                    </label>
+
+                                                </div>
+
+
+
+
+
+
+
+
+
+
+
+                                                <div class="govuk-checkboxes__item">
+                                                    <input class="govuk-checkboxes__input" id="category-2-7" name="category-2" type="checkbox" value="">
+                                                    <label class="govuk-label govuk-checkboxes__label" for="category-2-7">
+                                                        Parents and carers
+                                                    </label>
+
+                                                </div>
+
+
+
+
+                                            </div>
+
+
+                                        </fieldset>
+
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+
+
+            <div style="background-color: rgba(29, 112, 184, 0.1); padding: 10px 20px 20px 20px;" class="fam-hub-wrapper">
+                <div class="highlight-wrapper">
+                    <div class="govuk-summary-list__row">
+                        <div class="govuk-summary-list__key">
+                            <span class="govuk-caption-m">Family hub</span>
+                            <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Central Family Hub, Salford<span style="font-weight: 400;"> (0.2 miles)</span></h3>
+                        </div>
+                    </div>
+
+                    <dl class="govuk-summary-list govuk-summary-list--no-border">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Where
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Broughton Hub<br>
+                                50 Rigby Street<br>
+                                Salford M7 4BQ
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Phone
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <a href="tel:01617780601">0161 778 0601</a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Email
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <a href="mailto:broughtonhub@salford.gov.uk">broughtonhub@salford.gov.uk</a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Website
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <a href="https://www.salford.gov.uk/children-and-families/early-help-for-families/family-hubs-childrens-centres/">Central Family Hub, Salford</a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Opening hours
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Monday to Friday, 9am to 5pm
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Cost
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Free
+                            </dd>
+                        </div>
+                    </dl>
+                    <div>
+                        <p style="margin-bottom: 10px;">
+                            This is your nearest family hub. You can drop in, meet others and find general services
+                            and activities in your area.
+                        </p>
+                        <!-- <a href="results-all-hubs">See more family hubs.</a> -->
+                        <details class="govuk-details" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    See more family hubs
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text custom-component">
+
+                                <div class="govuk-summary-list__row">
+                                    <div class="govuk-summary-list__key">
+                                        <span class="govuk-caption-m">Family hub</span>
+                                        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Family Hubs (children's centres), Salford<span style="font-weight: 400;"> (0.4 miles)</span></h3>
+                                    </div>
+                                </div>
+
+                                <dl class="govuk-summary-list govuk-summary-list--no-border">
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Where
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Broughton Hub<br>
+                                            50 Rigby Street<br>
+                                            Salford M7 4BQ
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Phone
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            <a href="tel:01617780601">0161 778 0601</a>
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Email
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            <a href="mailto:broughtonhub@salford.gov.uk">broughtonhub@salford.gov.uk</a>
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Website
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            <a href="https://www.salford.gov.uk/children-and-families/early-help-for-families/family-hubs-childrens-centres/">Central Family Hub, Salford</a>
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Opening hours
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Monday to Friday, 9am to 5pm
+                                        </dd>
+                                    </div>
+                                    <div class="govuk-summary-list__row">
+                                        <dt class="govuk-summary-list__key">
+                                            Cost
+                                        </dt>
+                                        <dd class="govuk-summary-list__value">
+                                            Free
+                                        </dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <hr class="govuk-!-margin-bottom-4"> -->
+            <p style="margin-top: 20px; margin-bottom: 0px;">
+                Listings below show the nearest services or
+                activities you have searched for. These may take place at different locations, like
+                family hubs, children’s centres or community centres.
+            </p>
+            <hr class="govuk-!-margin-bottom-4 govuk-!-margin-top-4">
+
+            <div class="govuk-summary-list__row">
+                <div class="govuk-summary-list__key">
+                    <span class="govuk-caption-m govuk-!-margin-top-3">Service</span>
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Be Open On Breastfeeding in Salford<span style="font-weight: 400;"> (0.3 miles)</span></h3>
+                </div>
+            </div>
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Run by
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Breastfeeding in Salford
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Age range
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        0 to 5
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        When
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Monday and Friday, 10am to 2pm
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Where
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        The Bury Centre<br>
+                        10 Hope Street<br>
+                        Bury<br>
+                        M10 4PD<br>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Phone
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <a href="tel:074268355351">0161 365 4987</a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Email
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <a href="mailto:rachel@breastfeedinginsalford.org.uk">rachel@breastfeedinginsalford.org.uk</a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Website
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <a href="https://www.breastfeedinginsalford.org.uk">Be Open On Breastfeeding in Salford</a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Availability
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Drop in
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Cost
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        £2 every session
+                    </dd>
+                </div>
+            </dl>
+
+
+            <hr class="govuk-!-margin-bottom-4">
+
+            <div class="govuk-summary-list__row">
+                <div class="govuk-summary-list__key">
+                    <span class="govuk-caption-m">Service</span>
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Child and Adolescent Mental Health Services (CAMHS)<span style="font-weight: 400;"> (1.1 miles)</span></h3>
+                </div>
+            </div>
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Run by
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Manchester University NHS Foundation Trust
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Age range
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        0 to 19 (0 to 25 with SEND)
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        When
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Monday to Friday, 9am to 5pm
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Where
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Carol Kendrick Centre<br>
+                        Stratus House<br>
+                        Southmoor Road<br>
+                        Roundthorn Industrial Estate<br>
+                        Wythenshawe<br>
+                        Manchester<br>
+                        M23 9XD<br>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Phone
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <a href="tel:0161 686 5260">0161 518 5400</a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Email
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <a href="mailto:cmm-tr.salford-CAMHS@nhs.net">cmm-tr.salford-CAMHS@nhs.net</a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Website
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <a href="https://mft.nhs.uk/rmch/services/camhs/">CAMHS</a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Availability
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Drop in
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Cost
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Free
+                    </dd>
+                </div>
+            </dl>
+
+            <hr class="govuk-!-margin-bottom-4">
+
+            <div class="govuk-summary-list__row">
+                <div class="govuk-summary-list__key">
+                    <span class="govuk-caption-m">Service</span>
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Health visitor, Healthy Child Clinic (Central Team)<span style="font-weight: 400;"> (3.1 miles)</span></h3>
+                </div>
+            </div>
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Run by
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        NHS Salford Clinical Commissioning Group
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Age range
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        3 to 19
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        When
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Monday to Friday, 9am to 5pm
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Where
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Langworthy Cornerstone<br>
+                        451 Liverpool Street<br>
+                        Salford<br>
+                        M6 5QQ<br>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Phone
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <a href="tel:0161 206 6081">0161 206 6081</a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Email
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <a href="mailto:Central0-19@nca.nhs.uk">central0-19@nca.nhs.uk</a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Website
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <a href="https://www.salford.gov.uk/children-and-families/early-help-for-families/your-health-visiting-service/">Health visiting service</a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Availability
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        By appointment
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Cost
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Free
+                    </dd>
+                </div>
+            </dl>
+
+
+            <ul class="govuk-list govuk-!-margin-top-6">
+                <!-- <li>
+                  <a href="results-v3-youth-services" class="govuk-link">Youth services</a>
+                </li> -->
+                <li>
+                    <a href="family-hub-results-bad-journey" class="govuk-link">Bad journey</a>
+                </li>
+            </ul>
+
+
+
+
+
+            <nav class="govuk-pagination" role="navigation" aria-label="results">
+                <ul class="govuk-pagination__list">
+                    <li class="govuk-pagination__item govuk-pagination__item--current">
+                        <a class="govuk-link govuk-pagination__link" href="results" aria-label="Page 1" aria-current="page">
+                            1
+                        </a>
+                    </li>
+                    <li class="govuk-pagination__item">
+                        <a class="govuk-link govuk-pagination__link" href="results-page-2" aria-label="Page 2">
+                            2
+                        </a>
+                    </li>
+                    <li class="govuk-pagination__item">
+                        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                            3
+                        </a>
+                    </li>
+                </ul><div class="govuk-pagination__next">
+                    <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                        <span class="govuk-pagination__link-title">Next</span>
+                        <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+
+
+        </div>
+    </div>
+
+
+
+</main>

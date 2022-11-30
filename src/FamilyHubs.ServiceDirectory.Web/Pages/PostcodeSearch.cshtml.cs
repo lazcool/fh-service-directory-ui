@@ -29,7 +29,11 @@ namespace FamilyHubs.ServiceDirectory.Web.Pages
                 return RedirectToPage("/PostcodeSearch", new { postcodeError });
             }
 
-            return RedirectToPage("/ServiceFilter");
+            return RedirectToPage("ServiceFilter", new
+            {
+                postcode,
+                //distance = 32186.9 //212892.0
+            });
         }
     }
 }
